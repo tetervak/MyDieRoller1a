@@ -17,12 +17,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.viewModel = viewModel
-
-        viewModel.dieValue.observe(this){
-            if(it > 0){
-                binding.result.text = it.toString()
-            }
-        }
+        binding.lifecycleOwner = this
     }
-
 }
