@@ -22,8 +22,10 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        if(viewModel.dieValue > 0){
-            binding.result.text = viewModel.dieValue.toString()
+        viewModel.dieValue.observe(this){
+            if(it > 0){
+                binding.result.text = it.toString()
+            }
         }
 
         binding.rollButton.setOnClickListener {
@@ -34,7 +36,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun onRoll() {
         viewModel.roll()
-        binding.result.text = viewModel.dieValue.toString()
         Toast.makeText(this, getString(R.string.rolled), Toast.LENGTH_LONG).show()
     }
 
