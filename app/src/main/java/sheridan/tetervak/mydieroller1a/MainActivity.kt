@@ -2,16 +2,10 @@ package sheridan.tetervak.mydieroller1a
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
 import androidx.activity.viewModels
 import sheridan.tetervak.mydieroller1a.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-
-    companion object{
-        const val TAG = "MainActivity"
-    }
 
     private val viewModel: MainViewModel by viewModels()
 
