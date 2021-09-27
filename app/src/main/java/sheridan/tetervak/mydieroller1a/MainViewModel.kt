@@ -15,10 +15,8 @@ class MainViewModel : ViewModel(){
     val dieValue: LiveData<Int> = _dieValue
 
     fun roll(){
-        viewModelScope.launch {
-            die.roll()
-            _dieValue.value = die.value
-        }
+        die.roll()
+        _dieValue.value = die.value
     }
 
 }
