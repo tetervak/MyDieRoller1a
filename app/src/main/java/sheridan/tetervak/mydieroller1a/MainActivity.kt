@@ -6,13 +6,11 @@ import android.util.Log
 import android.widget.Toast
 import androidx.activity.viewModels
 import sheridan.tetervak.mydieroller1a.databinding.ActivityMainBinding
-import sheridan.tetervak.mydieroller1a.model.Die
 
 class MainActivity : AppCompatActivity() {
 
     companion object{
         const val TAG = "MainActivity"
-        const val RESULT = "Result"
     }
 
     private val viewModel: MainViewModel by viewModels()
