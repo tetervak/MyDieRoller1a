@@ -22,21 +22,13 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.viewModel = viewModel
+
         viewModel.dieValue.observe(this){
             if(it > 0){
                 binding.result.text = it.toString()
             }
         }
-
-        binding.rollButton.setOnClickListener {
-            Log.d(TAG, "The button is clicked")
-            onRoll()
-        }
-    }
-
-    private fun onRoll() {
-        viewModel.roll()
-        Toast.makeText(this, getString(R.string.rolled), Toast.LENGTH_LONG).show()
     }
 
 }
